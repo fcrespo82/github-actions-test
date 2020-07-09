@@ -42,6 +42,8 @@ jobs:
     - name: Package the extension
       id: package
       uses: ./.github/actions/action-vsce
+      with:
+        args: package
     - name: Upload a Release Asset
       uses: actions/upload-release-asset@v1.0.2
       env:
