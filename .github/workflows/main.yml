@@ -53,5 +53,3 @@ jobs:
         asset_path: ${{ steps.package.outputs.package_name }}
         asset_name: ${{ steps.package.outputs.package_name }}
         asset_content_type: application/zip
-      needs:
-        - package
