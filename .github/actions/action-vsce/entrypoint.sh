@@ -1,5 +1,7 @@
 #!/bin/sh -l
 
+npm i
+
 vsce "$@"
 
 name=`ls *.vsix`
