@@ -20,7 +20,12 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-    - uses: actions/checkout@v2
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Changelog Reader
+      id: changelog
+      uses: mindsers/changelog-reader-action@v1.3.1
 
     - name: Create a Release
       id: create_release
@@ -32,7 +37,7 @@ jobs:
         # The name of the release. For example, `Release v1.0.1`
         release_name: Release ${{ github.ref }}
         # Path to file with information about the tag.
-        body_path: ./CHANGELOG.md
+        body: ${{ steps.changelog.outputs.log_entry }}
 
     - name: Upload a Release Asset
       uses: actions/upload-release-asset@v1.0.2
