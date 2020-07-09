@@ -1,0 +1,12 @@
+# action.yml
+name: 'vsce plugin'
+description: 'vsce tool'
+
+outputs:
+  package_path: # id of output
+    description: 'Path of the built package'
+  package_name: # id of output
+    description: 'Filename of the built package'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
