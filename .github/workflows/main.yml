@@ -50,6 +50,8 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token is provided by Actions, you do not need to create your own token
       with:
         upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: ${{ steps.package.outputs.package_path }}
+        asset_path: ${{ steps.package.outputs.package_name }}
         asset_name: ${{ steps.package.outputs.package_name }}
         asset_content_type: application/zip
+      needs:
+        - package
