@@ -1,12 +1,10 @@
 # action.yml
-name: 'vsce plugin'
-description: 'vsce tool'
+name: 'Visual Studio code vsce package action'
+description: 'Runs vsce package on the repository'
 
 outputs:
-  package_path: # id of output
-    description: 'Path of the built package'
   package_name: # id of output
-    description: 'Filename of the built package'
+    description: 'Filename of the package'
 runs:
   using: 'docker'
   image: 'Dockerfile'

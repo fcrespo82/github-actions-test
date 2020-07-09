@@ -1,12 +1,11 @@
 #!/bin/sh -l
 
+# Install dependencies from your project
 npm i
 
-vsce "$@"
+# Packages the Visual Studio Code extension
+vsce package
 
+# Exports the name to the next step
 name=`ls *.vsix`
-path=`pwd`/$name
-
 echo "::set-output name=package_name::$name"
-
-echo "::set-output name=package_path::$path"

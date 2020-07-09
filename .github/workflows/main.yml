@@ -23,6 +23,7 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
 
+    # Read the changelog for the tag (https://keepachangelog.com compatible)
     - name: Changelog Reader
       id: changelog
       uses: mindsers/changelog-reader-action@v1.3.1
