@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: CI
+name: Package extension and create release on tag
 
 # Controls when the action will run. Triggers the workflow on push or pull request
 # events but only for the master branch
@@ -41,7 +41,7 @@ jobs:
 
     - name: Package the extension
       id: package
-      uses: actions/action-vsce
+      uses: ./.github/actions/action-vsce
     - name: Upload a Release Asset
       uses: actions/upload-release-asset@v1.0.2
       env:
